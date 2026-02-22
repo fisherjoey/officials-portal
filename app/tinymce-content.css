@@ -1,0 +1,364 @@
+/* TinyMCE Content Display Styles */
+
+.tinymce-content {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #374151;
+}
+
+.tinymce-content p {
+  margin-bottom: 1.5rem;
+}
+
+.tinymce-content h1 {
+  color: #60a5fa;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.tinymce-content h2 {
+  color: #60a5fa;
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.tinymce-content h3 {
+  color: #60a5fa;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.tinymce-content h4 {
+  color: #60a5fa;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tinymce-content ul {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.tinymce-content ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  list-style-type: decimal;
+}
+
+.tinymce-content li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: list-item;
+}
+
+.tinymce-content li > ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  list-style-type: circle;
+}
+
+.tinymce-content li > ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  list-style-type: lower-alpha;
+}
+
+.tinymce-content blockquote {
+  border-left: 4px solid #F97316;
+  background-color: #FFF7ED;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+}
+
+.tinymce-content blockquote p {
+  margin-bottom: 0;
+}
+
+.tinymce-content table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+}
+
+.tinymce-content th {
+  background-color: #003DA5;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.tinymce-content td {
+  border: 1px solid #E5E7EB;
+  padding: 0.75rem;
+}
+
+.tinymce-content hr {
+  border: none;
+  border-top: 1px solid #D1D5DB;
+  margin: 3rem 0;
+}
+
+.tinymce-content strong {
+  color: #1a3a4a;
+  font-weight: 600;
+}
+
+.tinymce-content em {
+  font-style: italic;
+}
+
+.tinymce-content pre {
+  background-color: #F3F4F6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.tinymce-content code {
+  padding: 0.125rem 0.25rem;
+  background-color: #F3F4F6;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.tinymce-content a {
+  color: #F97316;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.tinymce-content a:hover {
+  color: #60a5fa;
+}
+
+.tinymce-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Compact variant for accordions/panels (rule modifications, etc.) */
+.tinymce-content-compact {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.tinymce-content-compact p {
+  margin-bottom: 0.75rem;
+}
+
+.tinymce-content-compact p:last-child {
+  margin-bottom: 0;
+}
+
+.tinymce-content-compact h1,
+.tinymce-content-compact h2,
+.tinymce-content-compact h3,
+.tinymce-content-compact h4 {
+  color: #93c5fd;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tinymce-content-compact h1:first-child,
+.tinymce-content-compact h2:first-child,
+.tinymce-content-compact h3:first-child,
+.tinymce-content-compact h4:first-child {
+  margin-top: 0;
+}
+
+.tinymce-content-compact h1 { font-size: 1.25rem; }
+.tinymce-content-compact h2 { font-size: 1.125rem; }
+.tinymce-content-compact h3 { font-size: 1rem; }
+.tinymce-content-compact h4 { font-size: 0.9375rem; }
+
+.tinymce-content-compact ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.tinymce-content-compact ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  list-style-type: decimal;
+}
+
+.tinymce-content-compact li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  display: list-item;
+}
+
+.tinymce-content-compact li > ul {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  list-style-type: circle;
+}
+
+.tinymce-content-compact li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  list-style-type: lower-alpha;
+}
+
+.tinymce-content-compact blockquote {
+  border-left: 3px solid #3b82f6;
+  background-color: #eff6ff;
+  padding: 0.625rem 1rem;
+  margin: 0.75rem 0;
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+.tinymce-content-compact blockquote p {
+  margin-bottom: 0;
+}
+
+.tinymce-content-compact table {
+  width: 100%;
+  margin: 0.75rem 0;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.tinymce-content-compact th {
+  background-color: #1e40af;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.tinymce-content-compact td {
+  border: 1px solid #E5E7EB;
+  padding: 0.5rem 0.75rem;
+}
+
+.tinymce-content-compact hr {
+  border: none;
+  border-top: 1px solid #E5E7EB;
+  margin: 1rem 0;
+}
+
+.tinymce-content-compact strong {
+  color: #1a3a4a;
+  font-weight: 600;
+}
+
+.tinymce-content-compact a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.tinymce-content-compact a:hover {
+  color: #1d4ed8;
+}
+
+.tinymce-content-compact img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.375rem;
+  margin: 0.75rem 0;
+}
+
+/* ========================================
+   DARK MODE STYLES
+   ======================================== */
+
+/* Base text colors */
+.dark .tinymce-content,
+.dark .tinymce-content-compact {
+  color: #e5e7eb;
+}
+
+/* Headings */
+.dark .tinymce-content h1,
+.dark .tinymce-content h2,
+.dark .tinymce-content h3,
+.dark .tinymce-content h4 {
+  color: #60a5fa;
+}
+
+.dark .tinymce-content-compact h1,
+.dark .tinymce-content-compact h2,
+.dark .tinymce-content-compact h3,
+.dark .tinymce-content-compact h4 {
+  color: #93c5fd;
+}
+
+/* Strong text */
+.dark .tinymce-content strong,
+.dark .tinymce-content-compact strong {
+  color: #f9fafb;
+}
+
+/* Links */
+.dark .tinymce-content a {
+  color: #fb923c;
+}
+
+.dark .tinymce-content a:hover {
+  color: #60a5fa;
+}
+
+.dark .tinymce-content-compact a {
+  color: #60a5fa;
+}
+
+.dark .tinymce-content-compact a:hover {
+  color: #93c5fd;
+}
+
+/* Blockquotes */
+.dark .tinymce-content blockquote {
+  background-color: rgba(249, 115, 22, 0.1);
+  border-left-color: #f97316;
+}
+
+.dark .tinymce-content-compact blockquote {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-left-color: #3b82f6;
+}
+
+/* Tables */
+.dark .tinymce-content td,
+.dark .tinymce-content-compact td {
+  border-color: #374151;
+}
+
+/* Code blocks */
+.dark .tinymce-content pre,
+.dark .tinymce-content code,
+.dark .tinymce-content-compact pre,
+.dark .tinymce-content-compact code {
+  background-color: #1f2937;
+  color: #e5e7eb;
+}
+
+/* Horizontal rules */
+.dark .tinymce-content hr,
+.dark .tinymce-content-compact hr {
+  border-top-color: #374151;
+}

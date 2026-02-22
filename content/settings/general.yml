@@ -1,0 +1,41 @@
+# Site Settings
+# This file is used by the CMS and can be edited via the admin panel
+
+siteTitle: Your Officials Association
+siteDescription: Your community's premier officiating organization providing
+  trained and certified officials for all levels of competition.
+
+# Statistics displayed on homepage
+statistics:
+  activeOfficials: 100+
+  gamesPerSeason: 1,000+
+  yearsOfService: "10+"
+
+# Executive Team
+# Add your organization's leadership team here
+executiveTeam:
+  - name: John Smith
+    position: President
+    email: president@example.com
+    image: /images/executive-placeholder.svg
+  - name: Jane Doe
+    position: Vice President
+    email: vicepresident@example.com
+  - name: Bob Johnson
+    position: Secretary
+    email: secretary@example.com
+  - name: Sarah Williams
+    position: Treasurer
+    email: treasurer@example.com
+
+# Social Media Links (leave empty if not used)
+socialMedia:
+  facebook: ""
+  twitter: ""
+  instagram: ""
+  youtube: ""
+
+# Contact Information
+contact:
+  email: info@example.com
+  address: City, State, Country

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full" height="1024" version="1.1" viewBox="0 0 1024 1024" width="1024">
+  <defs>
+    <clipPath id="jersey-clip">
+      <path d="M 390,475 C 350,510 310,560 290,620 C 270,700 260,780 265,845 L 265,940 L 759,940 L 759,845 C 764,780 754,700 734,620 C 714,560 674,510 634,475 Z"/>
+    </clipPath>
+    <path d="M 598,660 A 58,58 0 1,1 714,660" fill="none" id="cboc-arc" stroke="none"/>
+    <path d="M 714,660 A 58,58 0 1,1 598,660" fill="none" id="cbac-arc" stroke="none"/>
+  </defs>
+  <path d="M 420,448 C 370,458 290,500 240,560 C 180,640 130,720 107,800 C 100,840 140,880 200,920 C 220,940 233,950 260,950 L 764,950 C 791,950 804,940 824,920 C 884,880 924,840 917,800 C 894,720 844,640 784,560 C 734,500 654,458 604,448 Z" fill="#161710" stroke="none"/>
+  <path d="M 390,475 C 350,510 310,560 290,620 C 270,700 260,780 265,845 L 265,940 L 759,940 L 759,845 C 764,780 754,700 734,620 C 714,560 674,510 634,475 Z" fill="#b6b6b6" stroke="none"/>
+  <g clip-path="url(#jersey-clip)">
+    <line stroke="#a0a0a0" stroke-width="4" x1="275" x2="275" y1="460" y2="950"/>
+    <line stroke="#a0a0a0" stroke-width="4" x1="330" x2="330" y1="460" y2="950"/>
+    <line stroke="#a0a0a0" stroke-width="4" x1="385" x2="385" y1="460" y2="950"/>
+    <line stroke="#a0a0a0" stroke-width="4" x1="440" x2="440" y1="460" y2="950"/>
+    <line stroke="#a0a0a0" stroke-width="4" x1="495" x2="495" y1="460" y2="950"/>
+    <line stroke="#a0a0a0" stroke-width="4" x1="550" x2="550" y1="460" y2="950"/>
+    <line stroke="#a0a0a0" stroke-width="4" x1="605" x2="605" y1="460" y2="950"/>
+    <line stroke="#a0a0a0" stroke-width="4" x1="660" x2="660" y1="460" y2="950"/>
+    <line stroke="#a0a0a0" stroke-width="4" x1="715" x2="715" y1="460" y2="950"/>
+  </g>
+  <circle cx="512" cy="271" fill="#b6b6b6" r="197" stroke="#1a1b11" stroke-width="6"/>
+  <path d="M 355,450 L 512,535 L 669,450 L 636,470 L 512,498 L 388,470 Z" fill="#fb0301" stroke="none"/>
+  <g>
+    <circle cx="656" cy="660" fill="#fb0301" r="95" stroke="none"/>
+    <circle cx="656" cy="660" fill="#ffffff" r="78" stroke="none"/>
+    <text fill="#161710" font-family="Arial, sans-serif" font-size="28px" font-weight="bold" text-anchor="middle">
+      <textPath startOffset="50%" xlink:href="#cboc-arc">CBOC</textPath>
+    </text>
+    <text fill="#161710" font-family="Arial, sans-serif" font-size="28px" font-weight="bold" text-anchor="middle">
+      <textPath startOffset="50%" xlink:href="#cbac-arc">CBAC</textPath>
+    </text>
+    <path d="M 0,-35 L 5,-20 L 18,-25 L 12,-12 L 28,-14 L 16,-4 L 22,6 L 10,4 L 8,16 L 0,8 L -8,16 L -10,4 L -22,6 L -16,-4 L -28,-14 L -12,-12 L -18,-25 L -5,-20 Z" fill="#fb0301" stroke="none" transform="translate(656,662) scale(0.45)"/>
+    <line stroke="#fb0301" stroke-width="2.5" x1="656" x2="656" y1="669" y2="680"/>
+  </g>
+</svg>

@@ -1,0 +1,567 @@
+# =============================================================================
+# Decap CMS Configuration for Officials Portal
+# =============================================================================
+# Documentation: https://decapcms.org/docs/
+#
+# This configuration file defines how the CMS works with your content.
+# Modify collections and fields to match your organization's needs.
+# =============================================================================
+
+# =============================================================================
+# BACKEND CONFIGURATION
+# =============================================================================
+# git-gateway: Uses Netlify Identity + Git Gateway (for production)
+# test-repo: For testing without git integration
+
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: 'Create {{collection}} "{{slug}}"'
+    update: 'Update {{collection}} "{{slug}}"'
+    delete: 'Delete {{collection}} "{{slug}}"'
+    uploadMedia: 'Upload "{{path}}"'
+    deleteMedia: 'Delete "{{path}}"'
+
+# Enable local backend for development (use with: npx decap-server)
+local_backend: true
+
+# =============================================================================
+# MEDIA CONFIGURATION
+# =============================================================================
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# =============================================================================
+# SITE SETTINGS
+# =============================================================================
+
+# Update these URLs after deployment
+# site_url: https://your-domain.netlify.app
+# display_url: https://your-domain.netlify.app
+logo_url: /images/logos/logo.png
+
+# =============================================================================
+# EDITORIAL WORKFLOW (Optional)
+# =============================================================================
+# Uncomment to enable draft/review/publish workflow
+# publish_mode: editorial_workflow
+
+# =============================================================================
+# COLLECTIONS
+# =============================================================================
+
+collections:
+
+  # ---------------------------------------------------------------------------
+  # NEWS ARTICLES
+  # ---------------------------------------------------------------------------
+  # Public-facing news and announcements displayed on the website
+
+  - name: "news"
+    label: "News"
+    label_singular: "News Article"
+    description: "Public news articles displayed on the website"
+    folder: "content/news"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "news/{{slug}}"
+    summary: "{{title}} - {{date}}"
+    sortable_fields: ["date", "title"]
+    view_groups:
+      - label: Featured
+        field: featured
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "The headline for your news article"
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+
+      - label: "Author"
+        name: "author"
+        widget: "string"
+        default: "Executive Board"
+
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+        required: false
+        allow_multiple: false
+        hint: "Optional image displayed with the article"
+
+      - label: "Excerpt"
+        name: "excerpt"
+        widget: "text"
+        hint: "Brief summary for previews (1-2 sentences)"
+
+      - label: "Featured"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "Feature this article prominently on the homepage"
+
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+        default: ["news"]
+        hint: "Add tags to categorize the article"
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        hint: "Full article content (supports Markdown formatting)"
+
+  # ---------------------------------------------------------------------------
+  # TRAINING EVENTS
+  # ---------------------------------------------------------------------------
+  # Training clinics, workshops, and certification sessions
+
+  - name: "training"
+    label: "Training Events"
+    label_singular: "Training Event"
+    description: "Training clinics, workshops, and certification sessions"
+    folder: "content/training"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "training/{{slug}}"
+    summary: "{{title}} - {{date}}"
+    sortable_fields: ["date", "title", "level"]
+    view_groups:
+      - label: Level
+        field: level
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "Name of the training event"
+
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+
+      - label: "Time"
+        name: "time"
+        widget: "string"
+        hint: "e.g., 9:00 AM - 4:00 PM"
+
+      - label: "Location"
+        name: "location"
+        widget: "string"
+
+      - label: "Instructor"
+        name: "instructor"
+        widget: "string"
+        default: "Education Committee"
+
+      - label: "Level"
+        name: "level"
+        widget: "select"
+        options:
+          - { label: "Beginner", value: "Beginner" }
+          - { label: "Intermediate", value: "Intermediate" }
+          - { label: "Advanced", value: "Advanced" }
+          - { label: "All Levels", value: "All Levels" }
+
+      - label: "Cost"
+        name: "cost"
+        widget: "string"
+        hint: "e.g., $75 or Free"
+
+      - label: "Max Participants"
+        name: "maxParticipants"
+        widget: "number"
+        required: false
+        value_type: "int"
+
+      - label: "Registration URL"
+        name: "registrationUrl"
+        widget: "string"
+        required: false
+        hint: "Link to registration form (if external)"
+
+      - label: "Excerpt"
+        name: "excerpt"
+        widget: "text"
+        hint: "Brief description for event listings"
+
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+        default: ["training"]
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        hint: "Full event description and details"
+
+  # ---------------------------------------------------------------------------
+  # PORTAL ANNOUNCEMENTS
+  # ---------------------------------------------------------------------------
+  # Member-only announcements visible in the portal
+
+  - name: "announcements"
+    label: "Portal Announcements"
+    label_singular: "Announcement"
+    description: "Member-only announcements for the portal"
+    folder: "content/portal/announcements"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} - {{date}}"
+    sortable_fields: ["date", "title", "urgent"]
+    view_filters:
+      - label: "Urgent"
+        field: urgent
+        pattern: true
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+
+      - label: "Author"
+        name: "author"
+        widget: "string"
+        default: "Executive"
+
+      - label: "Urgent"
+        name: "urgent"
+        widget: "boolean"
+        default: false
+        hint: "Mark as urgent to highlight the announcement"
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "General", value: "general" }
+          - { label: "Schedule", value: "schedule" }
+          - { label: "Rules", value: "rules" }
+          - { label: "Training", value: "training" }
+          - { label: "Administrative", value: "admin" }
+
+      - label: "Audience"
+        name: "audience"
+        widget: "select"
+        multiple: true
+        options:
+          - { label: "All Members", value: "all" }
+          - { label: "New Officials", value: "new" }
+          - { label: "Certified Officials", value: "certified" }
+          - { label: "Supervisors", value: "supervisors" }
+        default: ["all"]
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+
+  # ---------------------------------------------------------------------------
+  # RULE MODIFICATIONS
+  # ---------------------------------------------------------------------------
+  # League and tournament-specific rule variations
+
+  - name: "rule-modifications"
+    label: "Rule Modifications"
+    label_singular: "Rule Modification"
+    description: "League and tournament-specific rule modifications"
+    folder: "content/portal/rule-modifications"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} - {{category}} ({{season}})"
+    sortable_fields: ["title", "category", "season"]
+    view_groups:
+      - label: Category
+        field: category
+      - label: Season
+        field: season
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "e.g., Youth Basketball League"
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Youth", value: "Youth" }
+          - { label: "High School", value: "High School" }
+          - { label: "Adult", value: "Adult" }
+          - { label: "Tournament", value: "Tournament" }
+          - { label: "Special Event", value: "Special Event" }
+
+      - label: "Season"
+        name: "season"
+        widget: "string"
+        hint: "e.g., 2024-25"
+
+      - label: "Last Updated"
+        name: "lastUpdated"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        hint: "Document rule modifications using tables, lists, and headers"
+
+  # ---------------------------------------------------------------------------
+  # PUBLIC RESOURCES
+  # ---------------------------------------------------------------------------
+  # External resources and links for officials
+
+  - name: "resources"
+    label: "Resources"
+    label_singular: "Resource"
+    description: "External resources and reference materials"
+    folder: "content/resources"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} ({{category}})"
+    view_groups:
+      - label: Category
+        field: category
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Rules", value: "rules" }
+          - { label: "Training", value: "training" }
+          - { label: "Forms", value: "forms" }
+          - { label: "Guidelines", value: "guidelines" }
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        hint: "Brief description of the resource"
+
+      - label: "External Link"
+        name: "externalLink"
+        widget: "string"
+        required: false
+        hint: "URL for external resources (PDFs, websites, etc.)"
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: false
+        hint: "Additional details or embedded content"
+
+  # ---------------------------------------------------------------------------
+  # STATIC PAGES
+  # ---------------------------------------------------------------------------
+  # Standalone page content
+
+  - name: "pages"
+    label: "Pages"
+    label_singular: "Page"
+    description: "Static page content"
+    folder: "content/pages"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+
+  # ---------------------------------------------------------------------------
+  # HOME PAGE
+  # ---------------------------------------------------------------------------
+  # Homepage content configuration
+
+  - name: "home"
+    label: "Home Page"
+    description: "Homepage content and hero section"
+    files:
+      - name: "home"
+        label: "Home Page Content"
+        file: "content/pages/home.md"
+        fields:
+          - label: "Hero Title"
+            name: "heroTitle"
+            widget: "string"
+            hint: "Main headline on the homepage"
+
+          - label: "Hero Subtitle"
+            name: "heroSubtitle"
+            widget: "string"
+            hint: "Tagline below the main headline"
+
+          - label: "Hero Image"
+            name: "heroImage"
+            widget: "image"
+            required: false
+            hint: "Background image for hero section"
+
+          - label: "Statistics"
+            name: "stats"
+            widget: "list"
+            allow_add: true
+            summary: "{{fields.label}}: {{fields.value}}"
+            fields:
+              - label: "Label"
+                name: "label"
+                widget: "string"
+              - label: "Value"
+                name: "value"
+                widget: "string"
+
+          - label: "About Section"
+            name: "aboutSection"
+            widget: "markdown"
+            hint: "Content for the about section on the homepage"
+
+  # ---------------------------------------------------------------------------
+  # SITE SETTINGS
+  # ---------------------------------------------------------------------------
+  # Global site configuration
+
+  - name: "settings"
+    label: "Settings"
+    description: "Site-wide configuration settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "content/settings/general.yml"
+        fields:
+          - label: "Site Title"
+            name: "siteTitle"
+            widget: "string"
+
+          - label: "Site Description"
+            name: "siteDescription"
+            widget: "text"
+
+          - label: "Statistics"
+            name: "statistics"
+            widget: "object"
+            summary: "{{fields.activeOfficials}} officials"
+            fields:
+              - label: "Active Officials"
+                name: "activeOfficials"
+                widget: "string"
+              - label: "Games Per Season"
+                name: "gamesPerSeason"
+                widget: "string"
+              - label: "Years of Service"
+                name: "yearsOfService"
+                widget: "string"
+
+          - label: "Executive Team"
+            name: "executiveTeam"
+            widget: "list"
+            allow_add: true
+            summary: "{{fields.name}} - {{fields.position}}"
+            fields:
+              - label: "Name"
+                name: "name"
+                widget: "string"
+              - label: "Position"
+                name: "position"
+                widget: "string"
+              - label: "Email"
+                name: "email"
+                widget: "string"
+              - label: "Image"
+                name: "image"
+                widget: "image"
+                required: false
+
+          - label: "Social Media"
+            name: "socialMedia"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Facebook"
+                name: "facebook"
+                widget: "string"
+                required: false
+              - label: "Twitter"
+                name: "twitter"
+                widget: "string"
+                required: false
+              - label: "Instagram"
+                name: "instagram"
+                widget: "string"
+                required: false
+              - label: "YouTube"
+                name: "youtube"
+                widget: "string"
+                required: false
+
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - label: "Email"
+                name: "email"
+                widget: "string"
+              - label: "Address"
+                name: "address"
+                widget: "string"
+
+      - name: "site"
+        label: "Site Information"
+        file: "content/settings/site.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+
+          - label: "Description"
+            name: "description"
+            widget: "text"
+
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - label: "Email"
+                name: "email"
+                widget: "string"
+              - label: "Address"
+                name: "address"
+                widget: "string"
+
+          - label: "Social Media"
+            name: "social"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Facebook"
+                name: "facebook"
+                widget: "string"
+                required: false
+              - label: "Twitter"
+                name: "twitter"
+                widget: "string"
+                required: false
+              - label: "Instagram"
+                name: "instagram"
+                widget: "string"
+                required: false
