@@ -1,0 +1,114 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for background -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="100%" style="stop-color:#2c3e50"/>
+    </linearGradient>
+    <!-- Accent gradient -->
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b35"/>
+      <stop offset="100%" style="stop-color:#ff8c5a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bgGradient)"/>
+
+  <!-- Decorative grid pattern -->
+  <g opacity="0.03">
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/>
+    </pattern>
+    <rect width="1280" height="640" fill="url(#grid)"/>
+  </g>
+
+  <!-- Decorative circles -->
+  <circle cx="1150" cy="120" r="200" fill="#ff6b35" opacity="0.1"/>
+  <circle cx="130" cy="520" r="150" fill="#3498db" opacity="0.08"/>
+
+  <!-- Portal icon -->
+  <g transform="translate(540, 140)">
+    <!-- Outer ring -->
+    <circle cx="100" cy="100" r="80" fill="none" stroke="url(#accentGradient)" stroke-width="6"/>
+    <!-- Inner shield/badge shape -->
+    <path d="M100 40 L150 70 L150 120 Q150 160 100 180 Q50 160 50 120 L50 70 Z"
+          fill="none" stroke="white" stroke-width="3" opacity="0.9"/>
+    <!-- Whistle icon inside -->
+    <g transform="translate(70, 85)">
+      <ellipse cx="30" cy="25" rx="25" ry="18" fill="#ff6b35"/>
+      <rect x="50" y="18" width="15" height="14" rx="2" fill="#ff6b35"/>
+      <circle cx="30" cy="25" r="6" fill="#1a1a1a"/>
+      <path d="M5 15 Q0 10 5 5" fill="none" stroke="#ff6b35" stroke-width="3" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Main title -->
+  <text x="640" y="320" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="72" font-weight="700" fill="white" text-anchor="middle">
+    Officials Portal
+  </text>
+
+  <!-- Subtitle -->
+  <text x="640" y="380" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="28" fill="#a0aec0" text-anchor="middle">
+    Open-source template for sports officials associations
+  </text>
+
+  <!-- Accent line -->
+  <rect x="520" y="410" width="240" height="4" rx="2" fill="url(#accentGradient)"/>
+
+  <!-- Tech stack badges -->
+  <g transform="translate(390, 460)">
+    <!-- Next.js -->
+    <g>
+      <rect x="0" y="0" width="100" height="36" rx="18" fill="white" opacity="0.1"/>
+      <text x="50" y="24" font-family="system-ui, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="500">Next.js</text>
+    </g>
+    <!-- TypeScript -->
+    <g transform="translate(120, 0)">
+      <rect x="0" y="0" width="110" height="36" rx="18" fill="white" opacity="0.1"/>
+      <text x="55" y="24" font-family="system-ui, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="500">TypeScript</text>
+    </g>
+    <!-- Supabase -->
+    <g transform="translate(250, 0)">
+      <rect x="0" y="0" width="100" height="36" rx="18" fill="white" opacity="0.1"/>
+      <text x="50" y="24" font-family="system-ui, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="500">Supabase</text>
+    </g>
+    <!-- Tailwind -->
+    <g transform="translate(370, 0)">
+      <rect x="0" y="0" width="100" height="36" rx="18" fill="white" opacity="0.1"/>
+      <text x="50" y="24" font-family="system-ui, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="500">Tailwind</text>
+    </g>
+  </g>
+
+  <!-- SyncedSport attribution -->
+  <g transform="translate(640, 580)">
+    <text x="0" y="0" font-family="system-ui, sans-serif" font-size="16" fill="#718096" text-anchor="middle">
+      Built by
+    </text>
+    <text x="60" y="0" font-family="system-ui, sans-serif" font-size="16" fill="#ff6b35" text-anchor="middle" font-weight="600">
+      SyncedSport
+    </text>
+  </g>
+
+  <!-- GitHub corner indicator -->
+  <g transform="translate(1200, 40)">
+    <circle cx="0" cy="0" r="30" fill="white" opacity="0.1"/>
+    <!-- GitHub icon simplified -->
+    <path d="M0 -15 C-8 -15 -15 -8 -15 0 C-15 6 -11 11 -5 13 C-4 13 -4 12 -4 11 L-4 9 C-8 10 -9 7 -9 7 C-10 5 -11 4 -11 4 C-12 3 -11 3 -10 3 C-9 3 -8 4 -7 5 C-6 7 -3 7 -1 6 C-1 5 0 4 1 4 C-3 3 -7 2 -7 -4 C-7 -6 -6 -7 -5 -8 C-5 -9 -6 -11 -5 -14 C-5 -14 -3 -14 0 -12 C2 -13 4 -13 6 -12 C9 -14 11 -14 11 -14 C12 -11 11 -9 11 -8 C12 -7 13 -6 13 -4 C13 2 9 3 5 4 C6 5 7 6 7 8 L7 13 C7 14 7 15 8 15 C14 13 18 7 18 0 C18 -8 11 -15 0 -15"
+          fill="white" transform="scale(0.9)"/>
+  </g>
+
+  <!-- Version badge -->
+  <g transform="translate(80, 40)">
+    <rect x="0" y="0" width="70" height="28" rx="14" fill="#ff6b35"/>
+    <text x="35" y="19" font-family="system-ui, sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="600">v1.0.0</text>
+  </g>
+
+  <!-- MIT License badge -->
+  <g transform="translate(80, 78)">
+    <rect x="0" y="0" width="90" height="28" rx="14" fill="white" opacity="0.15"/>
+    <text x="45" y="19" font-family="system-ui, sans-serif" font-size="13" fill="white" text-anchor="middle">MIT License</text>
+  </g>
+</svg>
